@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone Blog</title>
+  <script src="js/lib/jquery-1.11.0.min.js"></script>
+  <script src="js/lib/underscore.js"></script>
+  <script src="js/vendor/tabletop.js"></script>
+  <script src="js/lib/backbone.js"></script>
+  <script src="js/models/pic.js"></script>
+  <script src="js/collections/pics.js"></script>
+  <script src="js/views/appView.js"></script>
+  <script src="js/views/picListView.js"></script>
+  <script src="js/views/postView.js"></script>
+  <script src="js/router/router.js"></script>
+  <script src="js/blog.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div id="main">
+</div>
+
+<script id="appView" type="text/x-underscore-template">
+  <h1>Issy Vintage</h1>
+  <h3>Issys Pics</h3>
+  <h3>Issy Vintage</h3>
+  <ul id="posts"></ul>
+</script>
+
+<script id="postListView" type="text/x-underscore-template">
+    <a href="<%= url %>"><%=name %></a>
+    <div class="pic-image">
+        <img src="<%= imageurl %>">
+        <p><%= price %></p>
+    </div>
+</script>
+
+<script id="picView" type="text/x-underscore-template">
+  <div class="picView">
+    <a href="<%= url %>"><%=name %></a>
+    <div class="pic-image">
+        <img class="image1" src="<%= imageurl %>">
+        <img class="image2" src="<%= imageurl2 %>">
+        <p><%= price %></p>
+    </div>
+  </div>
+</script>
+
+</body>
+</html>
