@@ -1,50 +1,11 @@
-/*HEADER*/
-#main {
-  max-width: 80%;
-  margin: auto;
-}
+#main{max-width:80%;margin:auto;}
+#main h3{width:20%;display:inline-block}
+ul#posts{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0;-webkit-padding-start:0;}
+ul#posts li.pic{cursor:pointer;width:30%;display:inline-block;vertical-align:top;margin:1%;}
+ul#posts li.pic img{max-width:70%}
+.picView{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);}
+.picView .pic-image-view{position:absolute;left:30%;width:30%}
+.picView .pic-image{display:inline-block}
+.picView .big{float:left}
+.picView .small{margin-bottom:1%;width:21.2%;display:inline-block;vertical-align:top}
 
-#main h3{
-    width:20%;
-    display:inline-block;
-}
-
-/*APPVIEW*/
-ul#posts {
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 0em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 0px;
-}
-
-#posts li.pic {
-  cursor: pointer;
-  width:30%;
-  display:inline-block;
-  vertical-align: top;
-  margin:1%;
-}
-
-#posts li img{
-    max-width:70%;
-}
-
-#posts li:hover {
-  text-decoration: underline;
-}
-
-/*PICVIEW*/
-.picView{
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.picView .pic-image  {
-  position:absolute;
-  left:30%;
-}

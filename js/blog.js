@@ -8,6 +8,7 @@ var Issy= Issy|| {};
 // ]);
 
 $(document).ready(function () {
+  
   //Gets Issys pics from the spreadsheet when application loads; 
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1OgX7endlY9pvLO2tFTJwH-RSA6wMZajbTIusv2Ri9YQ/pubhtml&output=html';
 
@@ -22,7 +23,7 @@ $(document).ready(function () {
     //Creating picture models and pushing them into the 
     Issy.pics = [];
     $.each(data, function(index, pic){
-      Issy.pics.push(new Issy.Pic({name: pic.name, url: pic.url, imageurl: pic.imageurl1, price: pic.price, month: pic.month, slug: pic.slug, imageurl2: pic.imageurl2}))
+      Issy.pics.push(new Issy.Pic({name: pic.name, url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, imageurl2: pic.imageurl2, imageurl3: pic.imageurl3, imageurl4: pic.imageurl4}))
     })
     Issy.router = new Issy.AppRouter();
     Backbone.history.start();
