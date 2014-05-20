@@ -8,12 +8,14 @@
   <script src="js/vendor/tabletop.js"></script>
   <script src="js/lib/backbone.js"></script>
   <script src="js/models/pic.js"></script>
+  <script src="js/models/category.js"></script>
   <script src="js/collections/pics.js"></script>
   <script src="js/views/appView.js"></script>
   <script src="js/views/picListView.js"></script>
-  <script src="js/views/postView.js"></script>
+  <script src="js/views/picView.js"></script>
   <script src="js/router/router.js"></script>
   <script src="js/blog.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -23,18 +25,19 @@
 </div>
 
 <script id="appView" type="text/x-underscore-template">
-  <h1>Issy Vintage</h1>
-  <h3>Issys Pics</h3>
-  <h3>Issy Vintage</h3>
+  <div id="header">
+    <h1>Month and Bark</h1>
+    <h3>M&B Favourites</h3>
+    <h3>M&B Vintage</h3>
+    <h3>M&B Music</h3>
+  </div>
   <ul id="posts"></ul>
 </script>
 
 <script id="postListView" type="text/x-underscore-template">
-    <a href="<%= url %>"><%=name %></a>
-    <div class="pic-image">
-        <img src="<%= imageurl1 %>">
-        <p><%= price %></p>
-    </div>
+    <a target="blank" href="<%= url %>"><%=name %></a>
+    <img src="<%= imageurl1 %>">
+    <p><%= price %></p>
 </script>
 
 <script id="picView" type="text/x-underscore-template">

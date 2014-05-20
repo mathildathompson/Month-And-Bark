@@ -1,3 +1,7 @@
+/*GLOBAL*/
+*
+  font-family 'Special Elite'
+
 /*FUNCTIONS*/
 border-radius()
   -webkit-border-radius arguments
@@ -8,10 +12,17 @@ border-radius()
 #main
   max-width: 80%
   margin: auto
-  h3
-    width:20%
-    display:inline-block
-
+  #header
+    background-color: #f6f6f6;
+    padding: 1%;
+    position: fixed;
+    width: 80%;
+    h3
+      cursor pointer
+      width:20%
+      display:inline-block
+    h3:hover 
+      text-decoration underline
 /*APPVIEW*/
 ul#posts
   -webkit-margin-before: 0em
@@ -19,35 +30,26 @@ ul#posts
   -webkit-margin-start: 0px
   -webkit-margin-end: 0px
   -webkit-padding-start: 0px
+  padding-top:17%;
   li.pic 
-    cursor: pointer
-    width:30%
+    width:20%
     display:inline-block
     vertical-align: top
-    margin:1%
+    padding:1% 6%
+    a
+      text-align center
+      display block
+      margin-bottom 5%
+      cursor pointer
+      text-decoration none
+    a:hover
+      color grey
     img
-      max-width:70%
+      display block
+      margin 0 auto
+      max-width 100%
+    p 
+      text-align center
 
-/*PICVIEW*/
-.picView
-  position: fixed
-  top: 0px
-  left: 0px
-  width: 100%
-  height: 100%
-  background-color: rgba(0, 0, 0, 0.7)
-    
-  .pic-image-view  
-    position:absolute
-    left:30%
-    width:30%
-  .pic-image
-    display:inline-block
-  .big
-    float: left 
-  .small
-    margin-bottom: 1%
-    width: 21.2%;
-    display:inline-block
-    vertical-align: top
+
     

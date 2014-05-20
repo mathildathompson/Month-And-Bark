@@ -25,6 +25,11 @@ $(document).ready(function () {
     $.each(data, function(index, pic){
       Issy.pics.push(new Issy.Pic({name: pic.name, url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, imageurl2: pic.imageurl2, imageurl3: pic.imageurl3, imageurl4: pic.imageurl4}))
     })
+    //Pushing issy categories into an array;
+    Issy.categories = [];
+    Issy.categories.push(new Issy.Category({slug:'m&b_favourites'}))
+    Issy.categories.push(new Issy.Category({slug:'m&b_vintage'}))
+    Issy.categories.push(new Issy.Category({slug:'m&b_music'}))
     Issy.router = new Issy.AppRouter();
     Backbone.history.start();
   }
