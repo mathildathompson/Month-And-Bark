@@ -27,9 +27,9 @@ $(document).ready(function () {
     })
     //Pushing issy categories into an array;
     Issy.categories = [];
-    Issy.categories.push(new Issy.Category({slug:'m&b_favourites'}))
-    Issy.categories.push(new Issy.Category({slug:'m&b_vintage'}))
-    Issy.categories.push(new Issy.Category({slug:'m&b_music'}))
+    Issy.categories.push(new Issy.Category({slug:'favourites'}))
+    Issy.categories.push(new Issy.Category({slug:'vintage'}))
+    Issy.categories.push(new Issy.Category({slug:'music'}))
     Issy.router = new Issy.AppRouter();
     Backbone.history.start();
   }

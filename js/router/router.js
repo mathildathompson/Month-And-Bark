@@ -3,25 +3,34 @@ var Issy = Issy || {};
 Issy.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'posts/:id': 'showPost',
+    'm&b/favourites': 'index',
+    'm&b/music': 'music',
+    'm&b/vintage': 'vintage',
     '*anything': 'goHome'
   },
 
   index: function () {
-    console.log(Issy.pics);
+    this.clearContent();
     var view = new Issy.AppView({collection: Issy.pics});
     view.render();
-    console.log('you are at the index page');
   },
 
-  showPost: function (slug) {
-    console.log('Show pic')
-    var pic = Issy.pics.get(slug);
-    var pic = Issy.blogPosts.get(slug);
-    new Issy.PicView({model: pic});
+  music: function(){
+    this.clearContent();
+    console.log('music');
+
+  },
+
+  vintage: function(){
+    this.clearContent();
+    console.log('vintage');
   },
 
   goHome: function () {
     document.location.hash = '';
+  },
+
+  clearContent: function(){
+    $('#header').next().remove();
   }
 });
