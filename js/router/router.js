@@ -4,8 +4,7 @@ Issy.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
     'm&b/favourites': 'index',
-    'm&b/music': 'music',
-    'm&b/vintage': 'vintage',
+    'm&b/brands': 'brands',
     '*anything': 'goHome'
   },
 
@@ -15,13 +14,7 @@ Issy.AppRouter = Backbone.Router.extend({
     view.render();
   },
 
-  music: function(){
-    this.clearContent();
-    console.log('music');
-
-  },
-
-  vintage: function(){
+  brands: function(){
     this.clearContent();
     console.log('vintage');
   },

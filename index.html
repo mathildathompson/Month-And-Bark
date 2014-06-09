@@ -28,6 +28,8 @@
 <script id="appView" type="text/x-underscore-template">
   <div id="header">
     <h1>Month and Bark</h1>
+    <h3 class="favourites">m&b favourites</h3>
+    <h3 class="brands">m&b brands</h3>
   </div>
   <ul id="favourites"></ul>
 </script>
@@ -39,22 +41,9 @@
 </script>
 
 <script id="postListView" type="text/x-underscore-template">
-    <a target="blank" href="<%= url %>"><%=name %></a>
+    <a target="blank" href="<%= url %>"><%= slug %></a>
     <img src="<%= imageurl1 %>">
     <p><%= price %></p>
-</script>
-
-<script id="picView" type="text/x-underscore-template">
-  <div class="picView">
-    <a href="<%= url %>"><%=name %></a>
-    <div class="pic-image-view">
-        <img class="pic-image big" src="<%= imageurl1 %>">
-        <img class="pic-image small" src="<%= imageurl2 %>">
-        <img class="pic-image small" src="<%= imageurl3 %>">
-        <img class="pic-image small" src="<%= imageurl4 %>">
-        <p><%= price %></p>
-    </div>
-  </div>
 </script>
 
 </body>
