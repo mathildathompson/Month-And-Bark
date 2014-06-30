@@ -1,6 +1,6 @@
-var Issy = Issy || {};
+var MonthBark = MonthBark || {};
 
-Issy.Pic = Backbone.Model.extend({
+MonthBark.Pic = Backbone.Model.extend({
   idAttribute: 'slug',
   defaults: {
     title: 'New Post Title',

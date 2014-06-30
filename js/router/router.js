@@ -1,6 +1,6 @@
-var Issy = Issy || {};
+var MonthBark = MonthBark || {};
 
-Issy.AppRouter = Backbone.Router.extend({
+MonthBark.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
     'm&b/favourites': 'index',
@@ -10,7 +10,7 @@ Issy.AppRouter = Backbone.Router.extend({
 
   index: function () {
     this.clearContent();
-    var view = new Issy.AppView({collection: Issy.pics});
+    var view = new MonthBark.AppView({collection: MonthBark.products});
     view.render();
   },
 

@@ -1,6 +1,6 @@
-var Issy = Issy || {};
+var MonthBark = MonthBark || {};
 
-Issy.PicView = Backbone.View.extend({
+MonthBark.PicView = Backbone.View.extend({
   tagName: 'li',
   initialize: function () {
     this.template = _.template($('#picView').html());

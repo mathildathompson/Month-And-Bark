@@ -1,5 +1,5 @@
-var Issy = Issy || {};
+var MonthBark = MonthBark || {};
 
-Issy.Pics = Backbone.Collection.extend({
-  model: Issy.Pic
+MonthBark.products = Backbone.Collection.extend({
+  model: MonthBark.Pic
 });

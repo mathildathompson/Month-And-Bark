@@ -1,5 +1,5 @@
-var Issy = Issy || {};
+var MonthBark = MonthBark || {};
 
-Issy.Category = Backbone.Model.extend({
+MonthBark.Category = Backbone.Model.extend({
     
 });

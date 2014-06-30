@@ -1,4 +1,4 @@
-var Issy= Issy|| {};
+var MonthBark= MonthBark|| {};
 
 // blog.blogPosts = new blog.Posts([
 //   new blog.Post({id: 1, title: 'Web Development', slug: 'web-dev', content: 'Lorem ipsum'}),
@@ -9,7 +9,7 @@ var Issy= Issy|| {};
 
 $(document).ready(function () {
   
-  //Gets Issys pics from the spreadsheet when application loads; 
+  //Gets MonthBarks products from the spreadsheet when application loads; 
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1OgX7endlY9pvLO2tFTJwH-RSA6wMZajbTIusv2Ri9YQ/pubhtml&output=html';
 
   function init() {
@@ -17,15 +17,15 @@ $(document).ready(function () {
                      callback: showInfo,
                      simpleSheet: true } )
   }
-
+  
   function showInfo(data, tabletop) {
     console.log("Successfully processed!")
     //Creating picture models and pushing them into the 
-    Issy.pics = [];
+    MonthBark.products = [];
     $.each(data, function(index, pic){
-      Issy.pics.push(new Issy.Pic({name: pic.name, url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1}))
+      MonthBark.products.push(new MonthBark.Pic({name: pic.name, url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1}))
     });
-    Issy.router = new Issy.AppRouter();
+    MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();
   }
 

@@ -1,6 +1,6 @@
-var Issy = Issy || {};
+var MonthBark = MonthBark || {};
 
-Issy.AppView = Backbone.View.extend({
+MonthBark.AppView = Backbone.View.extend({
   el: '#main',
   events: {
     'click .favourites': 'favourites',
@@ -13,15 +13,15 @@ Issy.AppView = Backbone.View.extend({
     this.$el.html(this.template());
 
     $.each(this.collection, function(index, pic){
-      var view = new Issy.PicListView({model:pic});
+      var view = new MonthBark.PicListView({model:pic});
       $('#favourites').append(view.render().el);
     });
   },
   favourites: function(){
-    Issy.router.navigate('/m&b/favourites', true);
+    MonthBark.router.navigate('/m&b/favourites', true);
   },
   brands: function(){
-    Issy.router.navigate('/m&b/brands', true);
+    MonthBark.router.navigate('/m&b/brands', true);
   }
 });
 
