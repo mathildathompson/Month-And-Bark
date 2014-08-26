@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Backbone Blog</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css">
+  <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
   <script src="js/lib/jquery-1.11.0.min.js"></script>
   <script src="js/lib/underscore.js"></script>
   <script src="js/vendor/tabletop.js"></script>
@@ -28,12 +30,24 @@
 
 <script id="appView" type="text/x-underscore-template">
   <div id="header">
-    <h1>Month and Bark</h1>
-    <h3 class="newsfeed">newsfeed</h3>
-    <h3 class="picks of the week">m&b brands</h3>
-    <h3 class="comments">comments</h3>
-    <h3 class="inspiration">inspiration</h3>
-    <h3 class="brand-directory">brand directory</h3>
+    <nav>
+      <a href="#" class="header-link" id="feed">fashion</a>
+      <a href="#" class="header-link" id="sunglasses">writing</a>
+      <h1>MONTH AND BARK</h1>
+      <a href="#" class="header-link" id="feed">about</a>
+      <a href="#" class="header-link" id="sunglasses">contact</a>
+    </nav>
+    <hr>
+  </div>
+  <div id="sidebar">
+    <ul>
+      <a href="#" id="feed">FEED</a>
+      <a href="#" id="sunglasses">SUNGLASSES</a>
+      <a href="#" id="skirts">SKIRTS</a>
+      <a href="#" id="shoes">SHOES</a>
+      <a href="#" id="shoes">TROUSERS</a>
+      <a href="#" id="shoes">ACCESSORIES</a>
+    </ul>
   </div>
   <ul id="favourites"></ul>
 </script>
@@ -44,10 +58,24 @@
   </div>
 </script>
 
-<script id="postListView" type="text/x-underscore-template">
+<script id="productListView" type="text/x-underscore-template">
+  <img src="<%= imageurl1 %>">
+</script>
+
+<script id="productListView" type="text/x-underscore-template">
     <a target="blank" href="<%= url %>"><%= slug %></a>
     <img src="<%= imageurl1 %>">
     <p><%= price %></p>
+</script>
+
+<script id="productListView" type="text/x-underscore-template">
+    <a target="blank" href="<%= url %>"><%= slug %></a>
+    <img src="<%= imageurl1 %>">
+    <p><%= price %></p>
+</script>
+
+<script id="picView" type="text/x-underscore-template">
+    <p><%= date %></p>
 </script>
 
 </body>

@@ -1,6 +1,9 @@
 /*GLOBAL*/
 * {
-  font-family: 'Special Elite';
+  font-family: 'Francois One', sans-serif;
+}
+.clear{
+  clear:both;
 }
 /*FUNCTIONS*/
 /*HEADER*/
@@ -9,10 +12,19 @@
   margin: auto;
 }
 #main #header {
-  background-color: #f6f6f6;
+  background-color: white;
   padding: 1%;
   position: fixed;
   width: 80%;
+}
+#main #header nav{
+  width:60%;
+  margin:0 auto;
+}
+#main #header h1{
+  text-align: center;
+  font-size: 2.5em;
+  margin: 0;
 }
 #main #header li {
   cursor: pointer;
@@ -24,6 +36,27 @@
   margin: 0 1%;
   display: inline-block;
 }
+.header-link{
+  display:inline-block;
+}
+/*SIDEBAR*/
+#main #sidebar{
+  padding-top: 10%;
+  width: 20%;
+  position:fixed;
+}
+#favourites{
+  width:70%;
+  display:inline-block;
+  vertical-align:tope;
+  margin-left:20%;
+}
+#main #sidebar a{
+  font-size: 1.5em;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
 /*APPVIEW*/
 ul#favourites {
   -webkit-margin-before: 0em;
@@ -31,7 +64,11 @@ ul#favourites {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
-  padding-top: 17%;
+  padding-top: 10%;
+}
+ul#favourites .picView{
+  text-align:center;
+  font-size:2em;
 }
 ul#favourites li.pic {
   width: 20%;
@@ -57,3 +94,14 @@ ul#favourites li.pic img {
 ul#favourites li.pic p {
   text-align: center;
 }
+.product-div{
+  width: 33%;
+  display: inline-block;
+}
+.product-div img{
+  width: 100%;
+  height:100%;
+  display: block;
+}
+
+

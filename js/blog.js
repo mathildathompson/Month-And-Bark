@@ -9,7 +9,7 @@ var MonthBark= MonthBark|| {};
 
 $(document).ready(function () {
   
- function initProducts() {
+  function initProducts() {
     Tabletop.init( { key: '1OgX7endlY9pvLO2tFTJwH-RSA6wMZajbTIusv2Ri9YQ',
                      callback: showProductInfo,
                      simpleSheet: true } )
@@ -24,24 +24,21 @@ $(document).ready(function () {
   }
 
   function showPicInfo(data, tabletop){
-    MonthBark.picks = [];
+    MonthBark.picks = {};
     $.each(data, function(index, pick){
-      MonthBark.picks.push(new MonthBark.Pick({date: pick.date, id: pick.rowNumber}))
+      MonthBark.picks[pick.rowNumber] = (new MonthBark.Pick({date: pick.date, products: [], name: pick.name}))
     })
-    console.log(MonthBark.picks);
+    initProducts();
   }
 
   function showProductInfo(data, tabletop) {
-    console.log("Successfully processed!")
-    //Creating picture models and pushing them into the 
-    MonthBark.products = [];
+    //Creating product models and pushing them into pics; 
     $.each(data, function(index, pic){
-      MonthBark.products.push(new MonthBark.Product({url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, pick_id: pic.pickid}))
+      MonthBark.picks[pic.pickid].attributes.products.push(new MonthBark.Product({url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, pick_id: pic.pickid}));
     });
     MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();
   }
-  initProducts();
   initPicks();
 });
 

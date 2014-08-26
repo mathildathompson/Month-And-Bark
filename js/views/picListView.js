@@ -1,10 +1,10 @@
 var MonthBark = MonthBark || {};
 
 MonthBark.PicListView = Backbone.View.extend({
-  tagName: 'li',
+  tagName: 'div',
+  className: 'product-div',
   initialize: function () {
-    this.template = _.template($('#postListView').html());
-    // this.template_two = _.template($('#picView').html());
+    this.template = _.template($('#productListView').html());
   },
   render: function () {
     this.$el.addClass('pic').html(this.template(this.model.toJSON()));
