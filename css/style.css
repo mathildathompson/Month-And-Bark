@@ -20,6 +20,8 @@
 #main #header nav{
   width:74%;
   margin:0 auto;
+  margin: 0 6% 0 14%;
+  display: inline-block;
 }
 #main #header h1{
   text-align: center;
@@ -32,6 +34,13 @@
   cursor: pointer;
   width: 20%;
   display: inline-block;
+}
+#main #header .social-icons{
+  display:inline-block;
+  width:5%;
+}
+#main #header .social-icons i{
+  margin:0 2%;
 }
 #main #header h3 {
   text-decoration: none;

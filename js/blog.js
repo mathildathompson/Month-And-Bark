@@ -32,9 +32,13 @@ $(document).ready(function () {
   }
 
   function showProductInfo(data, tabletop) {
+    //Creating an empty array to push products into; 
+    MonthBark.products = [];
     //Creating product models and pushing them into pics; 
     $.each(data, function(index, pic){
-      MonthBark.picks[pic.pickid].attributes.products.push(new MonthBark.Product({url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, pick_id: pic.pickid}));
+      var product = new MonthBark.Product({type: pic.type, url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, pick_id: pic.pickid});
+      MonthBark.products.push(product)
+      MonthBark.picks[pic.pickid].attributes.products.push(product);
     });
     MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();

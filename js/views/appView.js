@@ -3,7 +3,7 @@ var MonthBark = MonthBark || {};
 MonthBark.AppView = Backbone.View.extend({
   el: '#main',
   events: {
-    'click .favourites': 'favourites',
+    'click .sidebar-link': 'favourites',
     'click .brands': 'brands'
   },
   initialize: function () {
@@ -19,7 +19,9 @@ MonthBark.AppView = Backbone.View.extend({
       $('#favourites').append(view.render().el);
     });
   },
-  favourites: function(){
+  favourites: function(event){
+    console.log('SideBar link clicked');
+    debugger;
     MonthBark.router.navigate('/m&b/favourites', true);
   },
   brands: function(){
