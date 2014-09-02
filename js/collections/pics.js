@@ -1,5 +1,5 @@
 var MonthBark = MonthBark || {};
 
-MonthBark.products = Backbone.Collection.extend({
-  model: MonthBark.Pic
+MonthBark.Products = Backbone.Collection.extend({
+  model: MonthBark.Product
 });

@@ -32,12 +32,12 @@ $(document).ready(function () {
   }
 
   function showProductInfo(data, tabletop) {
-    //Creating an empty array to push products into; 
-    MonthBark.products = [];
+    //Creating an empty collection to push products into; 
+    MonthBark.productsList = new MonthBark.Products();
     //Creating product models and pushing them into pics; 
     $.each(data, function(index, pic){
       var product = new MonthBark.Product({type: pic.type, url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, pick_id: pic.pickid});
-      MonthBark.products.push(product)
+      MonthBark.productsList.push(product)
       MonthBark.picks[pic.pickid].attributes.products.push(product);
     });
     MonthBark.router = new MonthBark.AppRouter();
