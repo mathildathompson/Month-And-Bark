@@ -53,6 +53,7 @@
       <a href="#" id="shoes" class="sidebar-link">SHOES</a>
       <a href="#" id="shoes" class="sidebar-link">TROUSERS</a>
       <a href="#" id="shoes" class="sidebar-link">ACCESSORIES</a>
+      <a href="#" id="shoes" class="sidebar-link">BIKINI</a>
     </ul>
   </div>
   <ul id="favourites"></ul>
@@ -81,7 +82,9 @@
 </script>
 
 <script id="picView" type="text/x-underscore-template">
-    <p><%= date %></p>
+    <% if(date){%>
+      <p><%= date %></p>
+    <%}%>
 </script>
 
 </body>

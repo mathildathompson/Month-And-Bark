@@ -10,11 +10,19 @@ MonthBark.AppView = Backbone.View.extend({
     this.template = _.template($('#appView').html());
   },
   render: function (event) {
-    if(event){
-      var category = event.currentTarget.attributes.id
-      debugger;
-    }
+    //Rendering the template;
     this.$el.html(this.template());
+    if(event){
+      var category = event.currentTarget.attributes.id.value
+      if(category !== 'feed'){
+        var products = {};
+        products['1'] = new MonthBark.Pick({products: MonthBark.productsList.where({category: category}), date:''})
+        this.collection = products;
+      }else{
+        this.collection = MonthBark.picks
+      }
+    }
+    console.log('The collection is', this.collection);
     $.each(this.collection, function(index, pick){
       //Loop through the array of products;
       // $.each(pic.attributes.products, function(index, product){
@@ -25,7 +33,7 @@ MonthBark.AppView = Backbone.View.extend({
   },
   favourites: function(event){
     console.log('SideBar link clicked');
-    debugger;
+    // debugger;
     MonthBark.router.navigate('/m&b/favourites', true);
   },
   brands: function(){
