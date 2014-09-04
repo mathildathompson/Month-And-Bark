@@ -36,6 +36,7 @@ $(document).ready(function () {
       var pickList = MonthBark.picksList.findWhere({id: parseInt(pic.pickid)})
       pickList.attributes.products.push(new_product)
     });
+    MonthBark.picksListClone = MonthBark.picksList.clone();
     MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();
   }
