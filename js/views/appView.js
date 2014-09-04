@@ -22,8 +22,9 @@ MonthBark.AppView = Backbone.View.extend({
         this.collection = MonthBark.picks
       }
     }
-    console.log('The collection is', this.collection);
-    $.each(this.collection, function(index, pick){
+    //Reversing the direction of the picks;
+    var picks = this.collection.models.reverse();
+    $.each(picks, function(index, pick){
       //Loop through the array of products;
       // $.each(pic.attributes.products, function(index, product){
         var view = new MonthBark.PicView({model:pick});

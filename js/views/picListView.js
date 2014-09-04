@@ -7,7 +7,6 @@ MonthBark.PicListView = Backbone.View.extend({
     this.template = _.template($('#productListView').html());
   },
   render: function () {
-  	debugger;
     this.$el.addClass('pic').html(this.template(this.model.toJSON()));
     return this;
   }

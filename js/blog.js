@@ -17,13 +17,10 @@ $(document).ready(function () {
   }
 
   function showPicInfo(data, tabletop){
-    var data = data.reverse();
-    MonthBark.picks = {};
+    MonthBark.picksList = new MonthBark.Picks();
     $.each(data, function(index, pick){
-      console.log(index, pick.rowNumber)
-      MonthBark.picks[pick.rowNumber] = (new MonthBark.Pick({date: pick.date, products: [], name: pick.name}))
+      MonthBark.picksList.push(new MonthBark.Pick({date: pick.date, products: [], name: pick.name, id: pick.rowNumber}))
     })
-    console.log(MonthBark.picks);
     initProducts();
   }
 
@@ -35,10 +32,10 @@ $(document).ready(function () {
       var new_product = new MonthBark.Product({url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, pick_id: pic.pickid, category: pic.category});
       //Pushing a new product model into the productsList collection;
       MonthBark.productsList.push(new_product)
-      MonthBark.picks[pic.pickid].attributes.products.push(new_product);
+      //Look up the pick in the pickList array;
+      var pickList = MonthBark.picksList.findWhere({id: parseInt(pic.pickid)})
+      pickList.attributes.products.push(new_product)
     });
-    console.log(MonthBark.picks);
-    
     MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();
   }
