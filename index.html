@@ -67,13 +67,11 @@
 </script>
 
 <script id="productListView" type="text/x-underscore-template">
-  <img src="<%= imageurl1 %>">
-</script>
-
-<script id="productListView" type="text/x-underscore-template">
-    <a target="blank" href="<%= url %>"><%= slug %></a>
     <img src="<%= imageurl1 %>">
-    <p><%= price %></p>
+    <div class="hidden">
+      <a target="blank" href="<%= url %>"><%= slug %></a>
+      <p><%= price %></p>
+    </div>
 </script>
 
 <script id="productListView" type="text/x-underscore-template">
