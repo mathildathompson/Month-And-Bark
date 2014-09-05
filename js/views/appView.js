@@ -5,7 +5,8 @@ MonthBark.AppView = Backbone.View.extend({
   events: { //Need to set the events on the root $el;
     'click .sidebar-link': 'render',
     'click .brands': 'brands',
-    'mouseover .product-div img': 'toggleMouseover'
+    'mouseover .product-div img': 'toggleMouseover',
+    'mouseout .product-div img': 'toggleMouseout'
   },
   initialize: function () {
     this.template = _.template($('#appView').html());
@@ -44,11 +45,18 @@ MonthBark.AppView = Backbone.View.extend({
   },
   toggleMouseover: function(event){
     var $currentTarget = $(event.currentTarget);
-    var $picView = $currentTarget.closest('.picView');
-    var $height = $picView.height();
-    var $width = $picView.width();
+    var $productView = $currentTarget.closest('.product-div');
     var $hoverDiv = $currentTarget.next();
-    var toggleClassHidden = $hoverDiv.toggleClass('hidden').css({'height': $height, 'width': $width});
+    var $height = $productView.height();
+    var $width = $productView.width();
+    var $hoverDiv = $currentTarget.next();
+    $hoverDiv.toggleClass('hidden showProductInfoDiv').css({'height': $height, 'width': $width, 'top': '0', 'background-color': 'lightgrey', 'opacity': '0.5'});
+  },
+  toggleMouseout: function(event){
+    debugger;
+    var $currentTarget = $(event.currentTarget);
+    var $hoverDiv = $currentTarget.next();
+    $hoverDiv.toggleClass('hidden showProductInfoDiv')
   }
 });
 
