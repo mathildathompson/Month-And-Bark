@@ -4,7 +4,7 @@ MonthBark.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
     'm&b/favourites': 'index',
-    'm&b/brands': 'brands',
+    'm&b/fashion': 'fashion',
     '*anything': 'goHome'
   },
 
@@ -14,9 +14,9 @@ MonthBark.AppRouter = Backbone.Router.extend({
     view.render();
   },
 
-  brands: function(){
+  fashion: function(){
     this.clearContent();
-    console.log('vintage');
+    var view = new MonthBark.ArticleView({collection: MonthBark.articles})
   },
 
   goHome: function () {

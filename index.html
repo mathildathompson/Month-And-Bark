@@ -14,11 +14,14 @@
   <script src="js/models/product.js"></script>
   <script src="js/models/pick.js"></script>
   <script src="js/models/category.js"></script>
+  <script src="js/models/article.js"></script>
   <script src="js/collections/products.js"></script>
   <script src="js/collections/picks.js"></script>
+  <script src="js/collections/articles.js"></script>
   <script src="js/views/appView.js"></script>
   <script src="js/views/picListView.js"></script>
   <script src="js/views/picView.js"></script>
+  <script src="js/views/articleView.js"></script>
   <script src="js/router/router.js"></script>
   <script src="js/blog.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
@@ -33,11 +36,11 @@
 <script id="appView" type="text/x-underscore-template">
   <div id="header">
     <nav>
-      <a href="#" class="header-link" id="feed">fashion</a>
-      <a href="#" class="header-link" id="sunglasses">writing</a>
+      <a href="#" class="header-link" id="fashion">fashion</a>
+      <a href="#" class="header-link" id="writing">writing</a>
       <h1>MONTH AND BARK</h1>
-      <a href="#" class="header-link" id="feed">about</a>
-      <a href="#" class="header-link" id="sunglasses">contact</a>
+      <a href="#" class="header-link" id="about">about</a>
+      <a href="#" class="header-link" id="contact">contact</a>
     </nav>
     <div class="social-icons">
       <i class="fa fa-camera-retro"></i>
@@ -74,16 +77,19 @@
     </div>
 </script>
 
-<script id="productListView" type="text/x-underscore-template">
-    <a target="blank" href="<%= url %>"><%= slug %></a>
-    <img src="<%= imageurl1 %>">
-    <p><%= price %></p>
-</script>
-
 <script id="picView" type="text/x-underscore-template">
     <% if(date){%>
       <p><%= date %></p>
     <%}%>
+</script>
+
+<script id="articlesView" type="text/x-underscore-template">
+    <h3>Articles</h3>
+</script>
+
+<script id="articleView" type="text/x-underscore-template">
+    <h3><% name %></h3>
+    <p><%= content%></p>
 </script>
 
 </body>

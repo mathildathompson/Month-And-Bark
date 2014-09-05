@@ -37,6 +37,9 @@ $(document).ready(function () {
       pickList.attributes.products.push(new_product)
     });
     MonthBark.picksListClone = MonthBark.picksList.clone();
+    //New article collection;
+    MonthBark.articlesList = new MonthBark.Articles();
+    MonthBark.articlesList.push(new MonthBark.Article({name: 'Article 1', content: 'There was a young girl called Alice'}))
     MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();
   }

@@ -6,7 +6,8 @@ MonthBark.AppView = Backbone.View.extend({
     'click .sidebar-link': 'render',
     'click .brands': 'brands',
     'mouseenter .product-div img': 'toggleMouseover',
-    'mouseleave .product-div': 'toggleMouseout'
+    'mouseleave .product-div': 'toggleMouseout',
+    'click .header-link': 'headerLink'
   },
   initialize: function () {
     this.template = _.template($('#appView').html());
@@ -53,10 +54,13 @@ MonthBark.AppView = Backbone.View.extend({
     $hoverDiv.toggleClass('hidden showProductInfoDiv').css({'height': $height, 'width': $width, 'top': '0', 'background-color': 'lightgrey', 'opacity': '0.8'});
   },
   toggleMouseout: function(event){
-    console.log('mouseOutEvent', event, Math.random())
     var $currentTarget = $(event.currentTarget);
     var $hoverDiv = $currentTarget.find('div')
     $hoverDiv.toggleClass('hidden showProductInfoDiv')
+  },
+  headerLink: function(event){
+    console.log('Header Link')
+    MonthBark.router.navigate('/m&b/' + event.currentTarget.id, true);
   }
 });
 
