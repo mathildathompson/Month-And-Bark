@@ -59,7 +59,7 @@ MonthBark.AppView = Backbone.View.extend({
     $hoverDiv.toggleClass('hidden showProductInfoDiv')
   },
   headerLink: function(event){
-    console.log('Header Link')
+    event.preventDefault();
     MonthBark.router.navigate('/m&b/' + event.currentTarget.id, true);
   }
 });

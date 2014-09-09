@@ -3,8 +3,8 @@ var MonthBark = MonthBark || {};
 MonthBark.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'm&b/favourites': 'index',
-    'm&b/fashion': 'fashion',
+    'm&b/fashion': 'index',
+    'm&b/writing': 'writing',
     '*anything': 'goHome'
   },
 
@@ -14,7 +14,7 @@ MonthBark.AppRouter = Backbone.Router.extend({
     view.render();
   },
 
-  fashion: function(){
+  writing: function(){
     this.clearContent();
     var view = new MonthBark.ArticleView({collection: MonthBark.articles})
   },
@@ -24,6 +24,7 @@ MonthBark.AppRouter = Backbone.Router.extend({
   },
 
   clearContent: function(){
-    $('#header').next().remove();
+    $('#main').find('#sidebar').remove();
+    $('#main').find('#favourites').remove();
   }
 });
