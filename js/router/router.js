@@ -16,7 +16,11 @@ MonthBark.AppRouter = Backbone.Router.extend({
 
   writing: function(){
     this.clearContent();
-    var view = new MonthBark.ArticleView({collection: MonthBark.articles})
+    $.each(MonthBark.articlesList, function(index, article){
+      var view = new MonthBark.ArticlesView({collection: MonthBark.articlesList})
+      view.render();
+    })
+    
   },
 
   goHome: function () {

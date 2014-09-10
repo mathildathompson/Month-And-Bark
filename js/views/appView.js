@@ -12,6 +12,7 @@ MonthBark.AppView = Backbone.View.extend({
   },
   render: function (event) {
     this.$el.html(this.template());
+    this.collection = MonthBark.picksListClone.clone();
     if(event){
       //Clear the current models in the collection;
       this.collection.models = [];
@@ -20,7 +21,7 @@ MonthBark.AppView = Backbone.View.extend({
         var products = MonthBark.productsList.where({category: category})
         var pick = new MonthBark.Pick({products: products, date:''}) 
         this.collection.models.push(pick);
-      }else{
+      } else{
         this.collection = MonthBark.picksListClone.clone();
       }
     }
