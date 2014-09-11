@@ -16,6 +16,24 @@ $(document).ready(function () {
     })
   }
 
+  function initArticles(){
+      Tabletop.init({
+        key: '1vh_fwS0WnN8dJQLdbmlLzRSiXtRl-QKiIVZjvzpitwU',
+        callback: createArticles,
+        simpleSheet: true
+      })
+  }
+
+  function createArticles(data, tabletop){
+    //New article collection;
+    MonthBark.articlesList = new MonthBark.Articles();
+    $.each(data, function(index, article){
+      debugger;
+      MonthBark.articlesList.push(new MonthBark.Article({title: article.title, content: article.content, image_1: article.image1, image_2: article.image2})) 
+    })
+    console.log('MonthBark articles', MonthBark.articlesList)
+  }
+
   function showPicInfo(data, tabletop){
     MonthBark.picksList = new MonthBark.Picks();
     $.each(data, function(index, pick){
@@ -39,12 +57,10 @@ $(document).ready(function () {
       }
     });
     MonthBark.picksListClone = MonthBark.picksList.clone();
-    //New article collection;
-    MonthBark.articlesList = new MonthBark.Articles();
-    MonthBark.articlesList.push(new MonthBark.Article({name: 'Article 1', content: 'There was a young girl called Alice'}))
     MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();
   }
+  initArticles();
   initPicks();
 });
 
