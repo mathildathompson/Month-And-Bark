@@ -1,7 +1,7 @@
 var MonthBark = MonthBark || {};
 
 MonthBark.AppView = Backbone.View.extend({
-  el: '#main',
+  tagName: 'div',
   events: { //Need to set the events on the root $el;
     'click .sidebar-link': 'render',
     'click .brands': 'brands',
@@ -25,6 +25,7 @@ MonthBark.AppView = Backbone.View.extend({
         this.collection = MonthBark.picksListClone.clone();
       }
     }
+    var self = this;
     //Reversing the direction of the picks;
     var picks = this.collection.models.reverse();
     $.each(picks, function(index, pick){
@@ -33,8 +34,9 @@ MonthBark.AppView = Backbone.View.extend({
         var view = new MonthBark.PicView({model:pick});
         view.delegateEvents();
       // })
-      $('#favourites').append(view.render().el);
+      self.$el.append(view.render().el);
     });
+    return this;
   },
   favourites: function(event){
     console.log('SideBar link clicked');

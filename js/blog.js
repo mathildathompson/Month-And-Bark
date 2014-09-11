@@ -28,7 +28,6 @@ $(document).ready(function () {
     //New article collection;
     MonthBark.articlesList = new MonthBark.Articles();
     $.each(data, function(index, article){
-      debugger;
       MonthBark.articlesList.push(new MonthBark.Article({title: article.title, content: article.content, image_1: article.image1, image_2: article.image2})) 
     })
     console.log('MonthBark articles', MonthBark.articlesList)
