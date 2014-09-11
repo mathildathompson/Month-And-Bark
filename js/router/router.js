@@ -11,8 +11,7 @@ MonthBark.AppRouter = Backbone.Router.extend({
   index: function () {
     this.clearContent();
     var view = new MonthBark.AppView({collection: MonthBark.picksList});
-    debugger;
-    $('#header').append(view.render().el);
+    $('#header').after(view.render().el);
   },
 
   writing: function(){
