@@ -32,9 +32,11 @@ $(document).ready(function () {
       var new_product = new MonthBark.Product({url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, pick_id: pic.pickid, category: pic.category});
       //Pushing a new product model into the productsList collection;
       MonthBark.productsList.push(new_product)
-      //Look up the pick in the pickList array;
-      var pickList = MonthBark.picksList.findWhere({id: parseInt(pic.pickid)})
-      pickList.attributes.products.push(new_product)
+      //Look up the pick in the pickList array, add error checking to check the pickid has been defined;
+      if(pic.pickid !== ""){
+        var pickList = MonthBark.picksList.findWhere({id: parseInt(pic.pickid)})
+        pickList.attributes.products.push(new_product)
+      }
     });
     MonthBark.picksListClone = MonthBark.picksList.clone();
     //New article collection;
