@@ -14,6 +14,6 @@ MonthBark.ArticleView = Backbone.View.extend({
     //   //Appending the products into the picView;
     // 	self.$el.append(view.render().el);
     // });
-    $('#header').after(this.el);
+    return this;
   }
 });
