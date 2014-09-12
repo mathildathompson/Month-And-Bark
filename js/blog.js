@@ -59,6 +59,12 @@ $(document).ready(function () {
     MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();
   }
+
+  $('body').on('click', '.header-link', function(event){
+    event.preventDefault();
+    console.log('click event in event listener');
+    MonthBark.router.navigate('/m&b/' + event.currentTarget.id, true);
+  })
   initArticles();
   initPicks();
 });

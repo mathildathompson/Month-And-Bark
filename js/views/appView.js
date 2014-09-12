@@ -33,7 +33,7 @@ MonthBark.AppView = Backbone.View.extend({
       // $.each(pic.attributes.products, function(index, product){
         var view = new MonthBark.PicView({model:pick});
       // })
-      self.$el.find('#favourites').html(view.render().el)
+      self.$el.find('#favourites').append(view.render().el)
     });
     return this;
   },
