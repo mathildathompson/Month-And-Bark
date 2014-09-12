@@ -16,10 +16,13 @@ MonthBark.AppRouter = Backbone.Router.extend({
 
   writing: function(){
     this.clearContent();
-    $.each(MonthBark.articlesList.models, function(index, article){
-      var view = new MonthBark.ArticleView({model: article});
-      $('#header').after(view.render().el);
-    })
+    //Create a new articleNavView within this I am going to have to loop through each of the articles; 
+    var view = new MonthBark.ArticleNavView({collection: MonthBark.articlesList.models});
+    $('#header').after(view.render().el);
+    // $.each(MonthBark.articlesList.models, function(index, article){
+    //   var view = new MonthBark.ArticleNavView({collection: MonthBark.articlesList.models});
+    //   $('#header').after(view.render().el);
+    // });
     
   },
 
@@ -31,5 +34,6 @@ MonthBark.AppRouter = Backbone.Router.extend({
     $('#main').find('#sidebar').remove();
     $('#main').find('#favourites').remove();
     $('#main').find('.articleView').remove();
+    $('#main').find('.articleNavSidebarView').remove();
   }
 });

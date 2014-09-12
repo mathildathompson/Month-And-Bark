@@ -20,6 +20,8 @@
   <script src="js/collections/articles.js"></script>
   <script src="js/views/appView.js"></script>
   <script src="js/views/picListView.js"></script>
+  <script src="js/views/articleNavView.js"></script>
+  <script src="js/views/articleNavObjectView.js"></script>
   <script src="js/views/picView.js"></script>
   <script src="js/views/articleView.js"></script>
   <script src="js/router/router.js"></script>
@@ -88,6 +90,10 @@
     <p><img src='<%= image_1%>'/></p>
     <p><%= content %></p>
     <br>
+</script>
+
+<script id="articleNavObjectView" type="text/x-underscore-template">
+    <a href="#" id="feed" class="article-sidebar-link"><%= title %></a>
 </script>
 
 </body>
