@@ -24,6 +24,7 @@
   <script src="js/views/articleNavObjectView.js"></script>
   <script src="js/views/picView.js"></script>
   <script src="js/views/articleView.js"></script>
+  <script src="js/views/articleObjectView.js"></script>
   <script src="js/router/router.js"></script>
   <script src="js/blog.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
@@ -94,6 +95,12 @@
 
 <script id="articleNavObjectView" type="text/x-underscore-template">
     <a href="#" id="feed" class="article-sidebar-link"><%= title %></a>
+</script>
+
+<script id="articleObjectView" type="text/x-underscore-template">
+    <a href="#"><%= title %></a>
+    <img src=<%= image_1 %> />
+    <p><%= content %></p>
 </script>
 
 </body>
