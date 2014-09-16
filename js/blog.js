@@ -51,7 +51,9 @@ $(document).ready(function () {
       MonthBark.productsList.push(new_product)
       //Look up the pick in the pickList array, add error checking to check the pickid has been defined;
       if(pic.pickid !== ""){
+        console.log(pic.pickid)
         var pickList = MonthBark.picksList.findWhere({id: parseInt(pic.pickid)})
+        console.log(pickList)
         pickList.attributes.products.push(new_product)
       }
     });

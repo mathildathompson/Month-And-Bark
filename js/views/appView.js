@@ -18,6 +18,7 @@ MonthBark.AppView = Backbone.View.extend({
       this.collection.models = [];
       var category = event.currentTarget.id
       if(category !== 'feed'){
+        console.log(category)
         var products = MonthBark.productsList.where({category: category})
         var pick = new MonthBark.Pick({products: products, date:''}) 
         this.collection.models.push(pick);
