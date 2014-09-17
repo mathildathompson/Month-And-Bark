@@ -3,6 +3,8 @@
   font-family: 'Francois One', sans-serif
 .clear
   clear:both
+.hidden
+  display:none !important
 
 /*FUNCTIONS*/
 border-radius()
@@ -105,14 +107,35 @@ border-radius()
     a
       text-decoration:none
   .articleView
-    display:inline-block
-    vertical-align:top
-    width:80%
-    display:inline-block
-    vertical-align:top
-    width:75%
+    width:84%
     padding-top:10%
-    margin-left:30%
+    margin-left:17%
+    .articleObjectView
+      width:48%
+      display:inline-block
+      position:relative
+      margin:1%
+      a
+        text-decoration:none
+        color:black
+        position:absolute
+        top: 37%
+        width: 90%
+        left: 10%
+        color: black
+      img
+        width:100%
+        opacity:0.5
+      .article-content
+        display:none
+    .articleObjectViewShow
+      width:90%
+      a
+        position:static
+      img
+        width:75%
+        display:block
+        margin: 0 auto
 
 
     

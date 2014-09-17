@@ -3,6 +3,9 @@ var MonthBark = MonthBark || {};
 MonthBark.ArticleObjectView = Backbone.View.extend({
   tagName: 'li',
   className: 'articleObjectView',
+  events: {
+    'click': 'showArticle'
+  },
   initialize: function () {
     this.template = _.template($('#articleObjectView').html());
   },
@@ -15,5 +18,19 @@ MonthBark.ArticleObjectView = Backbone.View.extend({
     // 	self.$el.append(view.render().el);
     // });
     return this;
+  },
+  showArticle: function(){
+    this.$el.toggleClass('articleObjectViewShow');
+    var self = this
+    //Toggle article content class from the article that was clicked on
+    this.$el.find('p').toggleClass('article-content',600).promise().done(function(){
+      //Get all of the other articles and add toggle a class of hidden
+      debugger;
+      var hiddenArticles = self.$el.closest('.articleView').find('.article-content');
+      $.each(hiddenArticles, function(index, article){
+        $(article).closest('li').toggleClass('hidden')
+      })
+    });
+    //when this is done need to find all elements with class of article-content and hide them;
   }
 });

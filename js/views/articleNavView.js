@@ -2,13 +2,19 @@ var MonthBark = MonthBark || {};
 
 MonthBark.ArticleNavView = Backbone.View.extend({
   tagName: 'ul',
-  className: 'articleNavSidebarView',
+  className: 'articleNavView',
+  events: {
+    'click .sidebar-link': 'render'
+  },
+  initialize: function () {
+    this.template = _.template($('#articleNavView').html());
+  },
   render: function () {
-    var thisView = this;
-    $.each(this.collection, function(index, article){
-      var view = new MonthBark.ArticleNavObjectView({model: article});
-      thisView.$el.append(view.render().el);
-    });
+    this.$el.html(this.template());
+    // $.each(this.collection, function(index, article){
+    //   var view = new MonthBark.ArticleNavObjectView({model: article});
+    //   thisView.$el.append(view.render().el);
+    // });
     // var self = this;
     // $.each(this.collection, function(index, article){
     // 	var view = new MonthBark.PicListView({model:product});

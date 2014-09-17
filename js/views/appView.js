@@ -3,7 +3,6 @@ var MonthBark = MonthBark || {};
 MonthBark.AppView = Backbone.View.extend({
   tagName: 'div',
   events: { //Need to set the events on the root $el;
-    'click .sidebar-link': 'render',
     'click .brands': 'brands',
     'click .header-link': 'headerLink'
   },

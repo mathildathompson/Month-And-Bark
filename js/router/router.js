@@ -21,7 +21,7 @@ MonthBark.AppRouter = Backbone.Router.extend({
     $('#header').after(mainView.render().el);
 
     //Create a new articleNavView within this I am going to have to loop through each of the articles; 
-    var sideBarView = new MonthBark.ArticleNavView({collection: MonthBark.articlesList.models});
+    var sideBarView = new MonthBark.ArticleNavView();
     $('#header').after(sideBarView.render().el);
    
     // $.each(MonthBark.articlesList.models, function(index, article){

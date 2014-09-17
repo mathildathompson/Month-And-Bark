@@ -98,10 +98,24 @@
     <a href="#" id="feed" class="article-sidebar-link"><%= title %></a>
 </script>
 
+<script id="articleNavObjectView" type="text/x-underscore-template">
+    <a href="#" id="feed" class="article-sidebar-link"><%= title %></a>
+</script>
+
+<script id="articleNavView" type="text/x-underscore-template">
+    <div id="sidebar">
+    <ul>
+      <a href="#" id="food" class="sidebar-link">FOOD</a>
+      <a href="#" id="politics" class="sidebar-link">POLITICS</a>
+      <a href="#" id="fashion" class="sidebar-link">FASHION</a>
+    </ul>
+  </div>
+</script>
+
 <script id="articleObjectView" type="text/x-underscore-template">
     <a href="#"><%= title %></a>
     <img src=<%= image_1 %> />
-    <p><%= content %></p>
+    <p class="article-content"><%= content %></p>
 </script>
 
 </body>
