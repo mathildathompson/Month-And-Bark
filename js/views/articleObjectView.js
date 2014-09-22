@@ -25,7 +25,6 @@ MonthBark.ArticleObjectView = Backbone.View.extend({
     $.each(hiddenArticles, function(index, article){
       $(article).closest('li').toggleClass('hidden')
     })
-    debugger;
     this.$el.toggleClass('articleObjectViewShow');
     this.$el.find('p').toggleClass('article-content',600);
 

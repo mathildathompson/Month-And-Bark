@@ -4,7 +4,8 @@ MonthBark.AppView = Backbone.View.extend({
   tagName: 'div',
   events: { //Need to set the events on the root $el;
     'click .brands': 'brands',
-    'click .header-link': 'headerLink'
+    'click .header-link': 'headerLink',
+    'click .sidebar-link': 'render'
   },
   initialize: function () {
     this.template = _.template($('#appView').html());
