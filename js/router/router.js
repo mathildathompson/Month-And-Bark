@@ -5,12 +5,20 @@ MonthBark.AppRouter = Backbone.Router.extend({
     '': 'index',
     'm&b/fashion': 'index',
     'm&b/writing': 'writing',
+    'm&b/about': 'about',
+    'm&b/contact': 'contact',
     '*anything': 'goHome'
   },
 
   index: function () {
     this.clearContent();
     var view = new MonthBark.AppView({collection: MonthBark.picksList});
+    $('#header').after(view.render().el);
+  },
+
+  contact: function(){
+    this.clearContent();
+    var view = new MonthBark.ContactView();
     $('#header').after(view.render().el);
   },
 
@@ -30,7 +38,11 @@ MonthBark.AppRouter = Backbone.Router.extend({
     // });
     
   },
-
+  about: function(){
+    this.clearContent();
+    var aboutView = new MonthBark.AboutView();
+    $('#main').append($(aboutView.render().el));
+  },
   goHome: function () {
     document.location.hash = '';
   },
@@ -40,5 +52,7 @@ MonthBark.AppRouter = Backbone.Router.extend({
     $('#main').find('#favourites').remove();
     $('#main').find('.articleView').remove();
     $('#main').find('.articleNavSidebarView').remove();
+    $('#main').find('.aboutView').remove();
+    $('#main').find('.contactView').remove();
   }
 });

@@ -24,6 +24,8 @@
   <script src="js/views/articleNavObjectView.js"></script>
   <script src="js/views/picView.js"></script>
   <script src="js/views/articleView.js"></script>
+  <script src="js/views/contactView.js"></script>
+  <script src="js/views/aboutView.js"></script>
   <script src="js/views/articleObjectView.js"></script>
   <script src="js/router/router.js"></script>
   <script src="js/blog.js"></script>
@@ -115,10 +117,22 @@
 <script id="articleObjectView" type="text/x-underscore-template">
     <a href="#"><%= title %></a>
     <img src=<%= image_1 %> />
-    <p class="article-content">
+    <section class="article-content">
       <i class="fa fa-times-circle"></i>
       <%= content %>
-    </p>
+    </section>
+</script>
+
+<script id="aboutView" type="text/x-underscore-template">
+    <div class="about">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur aut provident eum, a ipsum culpa, necessitatibus adipisci excepturi ea nobis magnam illum sequi est et incidunt mollitia, repellendus deserunt sint?</p>
+    </div>
+</script>
+
+<script id="contactView" type="text/x-underscore-template">
+    <div class="contact">
+      <h3>Please get in contact with us at month&bark@gmail.com</h3>
+    </div>
 </script>
 
 </body>
