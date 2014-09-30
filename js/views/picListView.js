@@ -25,12 +25,12 @@ MonthBark.PicListView = Backbone.View.extend({
     var $height = $productView.height();
     var $width = $productView.width();
     var $hoverDiv = $currentTarget.next();
-    $hoverDiv.toggleClass('hidden showProductInfoDiv').css({'height': $height, 'width': $width, 'top': '0', 'background-color': 'lightgrey', 'opacity': '0.8'});
+    $hoverDiv.toggleClass('hide showProductInfoDiv').css({'height': $height, 'width': $width, 'top': '0', 'background-color': 'lightgrey', 'opacity': '0.8'});
   },
   toggleMouseout: function(event){
     console.log('toggleMouseoOut');
     var $currentTarget = $(event.currentTarget);
     var $hoverDiv = $currentTarget.find('div')
-    $hoverDiv.toggleClass('hidden showProductInfoDiv')
+    $hoverDiv.toggleClass('hide showProductInfoDiv')
   },
 });
