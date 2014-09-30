@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Backbone Blog</title>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -44,11 +45,11 @@
       <a href="#" class="header-link" id="about">about</a>
       <a href="#" class="header-link" id="contact">contact</a>
     </nav>
-    <div class="social-icons">
+    <!-- <div class="social-icons">
       <i class="fa fa-camera-retro"></i>
       <i class="fa fa-facebook"></i>
       <i class="fa fa-twitter"></i>
-    </div>
+    </div> -->
     <hr>
   </div>
 </div>
@@ -77,7 +78,7 @@
 
 <script id="productListView" type="text/x-underscore-template">
     <img src="<%= imageurl1 %>">
-    <div class="hidden">
+    <div class="hide">
       <a target="blank" href="<%= url %>"><%= slug %></a>
       <p><%= price %></p>
     </div>
@@ -130,8 +131,9 @@
 </script>
 
 <script id="contactView" type="text/x-underscore-template">
+    <h3>Please get in contact with us at month&bark@gmail.com</h3>
     <div class="contact">
-      <h3>Please get in contact with us at month&bark@gmail.com</h3>
+      <img class="london-skyline" src="images/london_skyline.png" alt="london_skyline"/>
     </div>
 </script>
 
