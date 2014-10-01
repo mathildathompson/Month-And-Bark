@@ -1,5 +1,2 @@
-require :rubygems
-gem 'sinatra'
-Bundler.require
-require 'main'
+require './main'
 run Sinatra::Application
