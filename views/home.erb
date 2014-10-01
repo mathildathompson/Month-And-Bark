@@ -72,37 +72,37 @@
 
 <script id="categoryView" type="text/x-underscore-template">
   <div id="sub-heading">
-    <h3>m&b <%=slug%></h3>
+    <h3>m&b {{=slug}}</h3>
   </div>
 </script>
 
 <script id="productListView" type="text/x-underscore-template">
-    <img src="<%= imageurl1 %>">
+    <img src="{{= imageurl1 }}">
     <div class="hide">
-      <a target="blank" href="<%= url %>"><%= slug %></a>
-      <p><%= price %></p>
+      <a target="blank" href="{{= url }}">{{= slug }}</a>
+      <p>{{= price }}</p>
     </div>
 </script>
 
 <script id="picView" type="text/x-underscore-template">
-    <% if(date){%>
-      <p><%= date %></p>
-    <%}%>
+    {{ if(date){}}
+      <p>{{= date }}</p>
+    {{}}}
 </script>
 
 <script id="articleView" type="text/x-underscore-template">
-    <h3><%= title %></h3>
-    <p><img src='<%= image_1%>'/></p>
-    <p><%= content %></p>
+    <h3>{{= title }}</h3>
+    <p><img src='{{= image_1}}'/></p>
+    <p>{{= content }}</p>
     <br>
 </script>
 
 <script id="articleNavObjectView" type="text/x-underscore-template">
-    <a href="#" id="feed" class="article-sidebar-link"><%= title %></a>
+    <a href="#" id="feed" class="article-sidebar-link">{{= title }}</a>
 </script>
 
 <script id="articleNavObjectView" type="text/x-underscore-template">
-    <a href="#" id="feed" class="article-sidebar-link"><%= title %></a>
+    <a href="#" id="feed" class="article-sidebar-link">{{= title }}</a>
 </script>
 
 <script id="articleNavView" type="text/x-underscore-template">
@@ -116,11 +116,11 @@
 </script>
 
 <script id="articleObjectView" type="text/x-underscore-template">
-    <a href="#"><%= title %></a>
-    <img src=<%= image_1 %> />
+    <a href="#">{{= title }}</a>
+    <img src={{= image_1 }} />
     <section class="article-content">
       <i class="fa fa-times-circle"></i>
-      <%= content %>
+      {{= content }}
     </section>
 </script>
 

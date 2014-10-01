@@ -1,5 +1,10 @@
 var MonthBark= MonthBark|| {};
 
+_.templateSettings = {
+    interpolate: /\{\{\=(.+?)\}\}/g,
+    evaluate: /\{\{(.+?)\}\}/g
+};
+
 $(document).ready(function () {
   
   function initProducts() {
