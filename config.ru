@@ -1,2 +1,2 @@
-require './Month-And-Bark'
+require 'main'
 run Sinatra::Application
