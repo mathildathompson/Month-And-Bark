@@ -44,10 +44,12 @@ MonthBark.AppRouter = Backbone.Router.extend({
     $('#main').append($(aboutView.render().el));
   },
   goHome: function () {
+    this.clearContent();
     document.location.hash = '';
   },
 
   clearContent: function(){
+    $('#main').find('.app-view').remove();
     $('#main').find('#sidebar').remove();
     $('#main').find('#favourites').remove();
     $('#main').find('.articleView').remove();

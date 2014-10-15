@@ -35,7 +35,6 @@ $(document).ready(function () {
     $.each(data, function(index, article){
       MonthBark.articlesList.push(new MonthBark.Article({title: article.title, content: article.content, image_1: article.image1, image_2: article.image2})) 
     })
-    console.log('MonthBark articles', MonthBark.articlesList)
   }
 
   function showPicInfo(data, tabletop){
@@ -46,7 +45,13 @@ $(document).ready(function () {
     initProducts();
   }
 
+  function sanitizeData(data){
+    
+  }
+
   function showProductInfo(data, tabletop) {
+    console.log('showProductInto', data, 'Mathilda')
+    var data = sanitizeData(data);
     //Creating an empty collection to push products into; 
     MonthBark.productsList = new MonthBark.Products();
     //Creating product models and pushing them into pics; 
@@ -56,9 +61,7 @@ $(document).ready(function () {
       MonthBark.productsList.push(new_product)
       //Look up the pick in the pickList array, add error checking to check the pickid has been defined;
       if(pic.pickid !== ""){
-        console.log(pic.pickid)
         var pickList = MonthBark.picksList.findWhere({id: parseInt(pic.pickid)})
-        console.log(pickList)
         pickList.attributes.products.push(new_product)
       }
     });
@@ -69,7 +72,6 @@ $(document).ready(function () {
 
   $('body').on('click', '.header-link', function(event){
     event.preventDefault();
-    console.log('click event in event listener');
     MonthBark.router.navigate('/m&b/' + event.currentTarget.id, true);
   })
   initArticles();
