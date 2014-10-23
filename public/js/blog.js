@@ -38,6 +38,10 @@ $(document).ready(function () {
     console.log('MonthBark articles', MonthBark.articlesList)
   }
 
+  function sanatizeData(data){
+    debugger;
+  }
+
   function showPicInfo(data, tabletop){
     MonthBark.picksList = new MonthBark.Picks();
     $.each(data, function(index, pick){
@@ -47,6 +51,7 @@ $(document).ready(function () {
   }
 
   function showProductInfo(data, tabletop) {
+    sanatizeData(data);
     //Creating an empty collection to push products into; 
     MonthBark.productsList = new MonthBark.Products();
     //Creating product models and pushing them into pics; 
@@ -66,12 +71,7 @@ $(document).ready(function () {
     MonthBark.router = new MonthBark.AppRouter();
     Backbone.history.start();
   }
-
-  $('body').on('click', '.header-link', function(event){
-    event.preventDefault();
-    console.log('click event in event listener');
-    MonthBark.router.navigate('/m&b/' + event.currentTarget.id, true);
-  })
+  
   initArticles();
   initPicks();
 });

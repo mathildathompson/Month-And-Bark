@@ -11,6 +11,7 @@ MonthBark.AppRouter = Backbone.Router.extend({
   },
 
   index: function () {
+    console.log('fashio index', Math.random())
     this.clearContent();
     var view = new MonthBark.AppView({collection: MonthBark.picksList});
     $('#header').after(view.render().el);

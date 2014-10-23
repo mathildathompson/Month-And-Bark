@@ -3,14 +3,13 @@ var MonthBark = MonthBark || {};
 MonthBark.AppView = Backbone.View.extend({
   tagName: 'div',
   events: { //Need to set the events on the root $el;
-    'click .brands': 'brands',
-    'click .header-link': 'headerLink',
     'click .sidebar-link': 'render'
   },
   initialize: function () {
     this.template = _.template($('#appView').html());
   },
   render: function (event) {
+    console.log('render', Math.random())
     this.$el.html(this.template());
     this.collection = MonthBark.picksListClone.clone();
     if(event){
