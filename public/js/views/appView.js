@@ -39,7 +39,6 @@ MonthBark.AppView = Backbone.View.extend({
   },
   favourites: function(event){
     console.log('SideBar link clicked');
-    // debugger;
     MonthBark.router.navigate('/m&b/favourites', true);
   },
   brands: function(){
