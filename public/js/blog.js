@@ -39,7 +39,14 @@ $(document).ready(function () {
   }
 
   function sanatizeData(data){
-    debugger;
+    //Get all of the pick Ids;
+    var pickIds = _.map(MonthBark.picksList.models, function(item){
+      return item.attributes.id
+    });
+    //Make sure that the pickId assigned exists;
+    return data = _.reject(data, function(product){
+       _.contains(pickIds, product.id)
+    })
   }
 
   function showPicInfo(data, tabletop){
@@ -51,21 +58,16 @@ $(document).ready(function () {
   }
 
   function showProductInfo(data, tabletop) {
-    sanatizeData(data);
+    var data = sanatizeData(data);
     //Creating an empty collection to push products into; 
     MonthBark.productsList = new MonthBark.Products();
     //Creating product models and pushing them into pics; 
-    $.each(data, function(index, pic){
-      var new_product = new MonthBark.Product({url: pic.url, price: pic.price, month: pic.month, slug: pic.slug, imageurl1: pic.imageurl1, pick_id: pic.pickid, category: pic.category});
+    $.each(data, function(index, product){
+      var new_product = new MonthBark.Product({url: product.url, price: product.price, month: product.month, slug: product.slug, imageurl1: product.imageurl1, pick_id: product.pickid, category: product.category});
       //Pushing a new product model into the productsList collection;
       MonthBark.productsList.push(new_product)
-      //Look up the pick in the pickList array, add error checking to check the pickid has been defined;
-      if(pic.pickid !== ""){
-        console.log(pic.pickid)
-        var pickList = MonthBark.picksList.findWhere({id: parseInt(pic.pickid)})
-        console.log(pickList)
-        pickList.attributes.products.push(new_product)
-      }
+      var pickList = MonthBark.picksList.findWhere({id: parseInt(product.pickid)});
+      pickList.attributes.products.push(new_product);
     });
     MonthBark.picksListClone = MonthBark.picksList.clone();
     MonthBark.router = new MonthBark.AppRouter();
