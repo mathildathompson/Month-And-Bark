@@ -63,7 +63,7 @@ $(document).ready(function () {
     MonthBark.productsList = new MonthBark.Products();
     //Creating product models and pushing them into pics; 
     $.each(data, function(index, product){
-      var new_product = new MonthBark.Product({url: product.url, price: product.price, month: product.month, slug: product.slug, imageurl1: product.imageurl1, pick_id: product.pickid, category: product.category});
+      var new_product = new MonthBark.Product({url: product.url, price: product.price, month: product.month, slug: product.slug, imageurl1: product.imageurl1, pick_id: product.pickid, category: product.category.toLowerCase()});
       //Pushing a new product model into the productsList collection;
       MonthBark.productsList.push(new_product)
       var pickList = MonthBark.picksList.findWhere({id: parseInt(product.pickid)});

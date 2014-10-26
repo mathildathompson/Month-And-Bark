@@ -39,12 +39,14 @@
 <div id="main">
   <div id="header">
     <nav>
-      <a href="#/m&b/fashion" class="header-link" id="fashion">fashion</a>
-      <a href="#/m&b/writing" class="header-link" id="writing">writing</a>
-      <h1>MONTH AND BARK</h1>
-      <!-- <img class="logo" src="../images/logo.png"/> -->
-      <a href="#/m&b/about" class="header-link" id="about">about</a>
-      <a href="#/m&b/contact" class="header-link" id="contact">contact</a>
+      <ul>
+        <img class="logo" class="header-link" src="../images/logo_m&b.png"/>
+        <a href="#/m&b/fashion" class="header-link" id="fashion">fashion</a>
+        <a href="#/m&b/writing" class="header-link" id="writing">writing</a>
+        <h1>MONTH AND BARK</h1>
+        <a href="#/m&b/about" class="header-link" id="about">about</a>
+        <a href="#/m&b/contact" class="header-link" id="contact">contact</a>
+      <ul>
     </nav>
     <!-- <div class="social-icons">
       <i class="fa fa-camera-retro"></i>
@@ -59,7 +61,7 @@
   <div id="sidebar">
     <ul>
       <div id="feed" class="sidebar-link">FEED</div>
-      <div id="IntimatesandSwimwear" class="sidebar-link">INTIMITES & SWIMWEAR</div>
+      <div id="intimates&swimwear" class="sidebar-link">INTIMITES & SWIMWEAR</div>
       <div id="skirts" class="sidebar-link">SKIRTS</div>
       <div id="shoes" class="sidebar-link">SHOES</div>
       <div id="trousers" class="sidebar-link">TROUSERS</div>
@@ -83,10 +85,10 @@
 
 <script id="productListView" type="text/x-underscore-template">
     <img src="{{= imageurl1 }}">
-    <div class="hide">
-      <a target="blank" href="{{= url }}">{{= slug }}</a>
+    <a target="blank" href="{{= url }}" class="hide" >
+      <p>{{= slug }}</p>
       <p>{{= price }}</p>
-    </div>
+    </a>
 </script>
 
 <script id="picView" type="text/x-underscore-template">

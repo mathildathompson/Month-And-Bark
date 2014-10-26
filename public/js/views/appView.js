@@ -9,15 +9,13 @@ MonthBark.AppView = Backbone.View.extend({
     this.template = _.template($('#appView').html());
   },
   render: function (event) {
-    console.log('render', Math.random())
     this.$el.html(this.template());
     this.collection = MonthBark.picksListClone.clone();
     if(event){
       //Clear the current models in the collection;
       this.collection.models = [];
-      var category = event.currentTarget.id
+      var category = event.currentTarget.id;
       if(category !== 'feed'){
-        console.log(category)
         var products = MonthBark.productsList.where({category: category})
         var pick = new MonthBark.Pick({products: products, date:''}) 
         this.collection.models.push(pick);

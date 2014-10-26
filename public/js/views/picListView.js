@@ -12,25 +12,21 @@ MonthBark.PicListView = Backbone.View.extend({
   },
   render: function () {
     this.$el.addClass('pic').html(this.template(this.model.toJSON()));
-    this.$el.on('mouseover', '.product-div', function(){
-    	console.log('mouseover');
-    })
+    
     return this;
   },
   toggleMouseover: function(event){
     console.log('toggleMouseOver');
-    var $currentTarget = $(event.currentTarget).find('img');
-    var $productView = $currentTarget.closest('.product-div');
-    var $hoverDiv = $currentTarget.next();
+    var $productView = $(event.currentTarget);
+    var $hoverDiv = $productView.find('a');
     var $height = $productView.height();
     var $width = $productView.width();
-    var $hoverDiv = $currentTarget.next();
-    $hoverDiv.toggleClass('hide showProductInfoDiv').css({'height': $height, 'width': $width, 'top': '0', 'background-color': 'lightgrey', 'opacity': '0.8'});
+    $hoverDiv.toggleClass('hide showProductInfoDiv').css({'height': $height, 'width': $width, 'top': '0', 'background-color': 'lightgrey', 'opacity': '0.8', 'padding-top': ($height / 2.2)});
   },
   toggleMouseout: function(event){
     console.log('toggleMouseoOut');
     var $currentTarget = $(event.currentTarget);
-    var $hoverDiv = $currentTarget.find('div')
+    var $hoverDiv = $currentTarget.find('a')
     $hoverDiv.toggleClass('hide showProductInfoDiv')
   },
 });
