@@ -50,6 +50,7 @@ $(document).ready(function () {
   }
 
   function showPicInfo(data, tabletop){
+    console.log(data);
     MonthBark.picksList = new MonthBark.Picks();
     $.each(data, function(index, pick){
       MonthBark.picksList.push(new MonthBark.Pick({date: pick.date, products: [], name: pick.name, id: pick.rowNumber}))
@@ -58,6 +59,8 @@ $(document).ready(function () {
   }
 
   function showProductInfo(data, tabletop) {
+    console.log(data);
+    debugger;
     var data = sanatizeData(data);
     //Creating an empty collection to push products into; 
     MonthBark.productsList = new MonthBark.Products();
@@ -67,6 +70,7 @@ $(document).ready(function () {
       //Pushing a new product model into the productsList collection;
       MonthBark.productsList.push(new_product)
       var pickList = MonthBark.picksList.findWhere({id: parseInt(product.pickid)});
+      console.log(pickList, 'pickLst');
       pickList.attributes.products.push(new_product);
     });
     MonthBark.picksListClone = MonthBark.picksList.clone();
