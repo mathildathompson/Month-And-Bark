@@ -6,7 +6,7 @@ _.templateSettings = {
 };
 
 $(document).ready(function () {
-  
+  console.log('dom ready')
   function initProducts() {
     Tabletop.init( { key: '1OgX7endlY9pvLO2tFTJwH-RSA6wMZajbTIusv2Ri9YQ',
                      callback: showProductInfo,
