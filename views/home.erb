@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Backbone Blog</title>
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <script src="js/lib/jquery-1.11.0.min.js"></script>
   <script src="js/lib/underscore.js"></script>
   <script src="js/vendor/tabletop.js"></script>
@@ -91,7 +92,8 @@
     </a>
 </script>
 
-<script id="picView" type="text/x-underscore-template">
+<script id="picView" type="text/x-underscore-template"  class="js-masonry"
+  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
     {{ if(date){}}
       <p>{{= date }}</p>
     {{}}}
