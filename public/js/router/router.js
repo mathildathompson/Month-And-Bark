@@ -1,5 +1,4 @@
 var MonthBark = MonthBark || {};
-
 MonthBark.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
